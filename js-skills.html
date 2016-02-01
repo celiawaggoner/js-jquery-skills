@@ -360,6 +360,14 @@
 
 <script>
   // put your code here
+  function agreeWithUser(evt) {
+    evt.preventDefault();
+    var response = $('#favorite-food-input').val();
+    $('#agreeable-text').html("I like " + response + ", too.");
+  }
+
+  $('#agreeable-form').on('submit', agreeWithUser);
+
 </script>
 
 <div class="hint">
@@ -389,6 +397,25 @@
 
 <script>
   // put your code here
+  function guessingGame() {
+    var number = Math.floor((Math.random() * 100) + 1);
+    var guess = null;
+
+  while (guess !== number) {
+      guess = parseInt(prompt("Guess a number between 1 and 100!"));
+      if (guess > number) {
+      alert("Your guess was too high!");
+      }
+      else if (guess < number) {
+      alert("Your guess was too low!"); 
+      }
+  }
+
+  alert("Congrats! You guessed it!");
+}
+
+$('#play-guessing-game').on('click', guessingGame);
+
 </script>
 
 <div class="hint">
